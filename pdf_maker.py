@@ -25,9 +25,13 @@ def mk_page(in_txt):
     pdf.cell(w=0, h=8, txt=in_txt, align="R")
 
 
-for i, row in doc_df.iterrows():
-    for i in range(row["Pages"]):
-        mk_page(row["Topic"])
+def main():
+    for i, row in doc_df.iterrows():
+        for i in range(row["Pages"]):
+            mk_page(row["Topic"])
+
+    pdf.output("output/new_pdf.pdf")
 
 
-pdf.output("output/new_pdf.pdf")
+if __name__ == "__main__":
+    main()
