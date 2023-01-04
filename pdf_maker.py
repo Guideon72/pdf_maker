@@ -15,8 +15,8 @@ def mk_page(in_txt):
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=12, txt=in_txt, align="L", ln=1, border=0)
 
-    for i in range(20, 297, 10):
-        pdf.line(10, i, 200, i)
+    for y in range(20, 297, 10):
+        pdf.line(10, y, 200, y)
 
     # building Footer (should do this for real by extending FPD and adding Footer() method)
     pdf.ln(267)
